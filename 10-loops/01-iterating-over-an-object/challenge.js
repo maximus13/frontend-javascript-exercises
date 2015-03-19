@@ -1,5 +1,38 @@
-module.exports.getKeys = undefined;
+module.exports.getKeys = function(obj){
+  var result = [],
+      i;
 
-module.exports.getValues = undefined;
+  for(i in obj){ 
+    if(obj.hasOwnProperty(i)){ 
+      result.push(i); 
+    }
+  }
 
-module.exports.objectToArray = undefined;
+  return result;
+};
+
+module.exports.getValues = function(obj){
+  var result = [],
+      i;
+
+  for(i in obj){ 
+    if(obj.hasOwnProperty(i)){ 
+      result.push(obj[i]); 
+    }
+  }
+
+  return result;
+};
+
+module.exports.objectToArray = function(obj){
+  var result = [],
+      i;
+
+  for(i in obj){
+    if(obj.hasOwnProperty(i)){
+      result.push(i + " is " + obj[i]);
+    }
+  }
+  return result;
+};
+};
